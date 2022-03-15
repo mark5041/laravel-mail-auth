@@ -17,7 +17,7 @@ class ContactController extends Controller
 
         $validator = Validator::make($data, [
             'name' => 'required',
-            'email' => 'required',
+            'mail' => 'required',
             'mailObject' => 'required',
             'message' => 'required',
         ]);

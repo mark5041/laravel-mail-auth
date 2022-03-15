@@ -3,7 +3,7 @@
         <div v-if="success" class="alert alert-success" role="alert">
             Mail inviata con successo!
         </div>
-        <form @submit.prevent="sendForm">
+        <form @submit.prevent="sendForm" method="post">
             <div class="form-group">
                 <label for="name">Nome</label>
                 <input v-model="name" type="text" class="form-control" id="name" name="name">
@@ -13,8 +13,8 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input v-model="email" type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                <p class="alert alert-danger" v-for="(error, index) in errors.email" :key="index">
+                <input v-model="mail" type="email" class="form-control" id="mail" name="mail" placeholder="name@example.com">
+                <p class="alert alert-danger" v-for="(error, index) in errors.mail" :key="index">
                     {{ error }}
                 </p>
             </div>
@@ -44,7 +44,7 @@ export default {
     data(){
         return {
             name: null,
-            email: null,
+            mail: null,
             mailObject: null,
             message: null,
             success: false,
@@ -59,7 +59,7 @@ export default {
             axios.post('/api/contacts',
             {
                 'name': this.name,
-                'email': this.email,
+                'mail': this.mail,
                 'mailObject': this.mailObject,
                 'message': this.message
             })
@@ -73,7 +73,7 @@ export default {
                     this.success = true;
                     this.errors = {};
                     this.name="";
-                    this.email="";
+                    this.mail="";
                     this.mailObject="";
                     this.message="";
                 }

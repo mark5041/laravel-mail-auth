@@ -40,7 +40,7 @@
                     },
                     {
                         label: 'Contatti',
-                        routeName: 'contacts',
+                        routeName: 'contact',
                     }
                 ],
             }
