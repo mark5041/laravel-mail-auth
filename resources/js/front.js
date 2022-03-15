@@ -10,7 +10,7 @@
  
  import App from "./views/App";
  import Home from "./pages/Home";
- import About from "./pages/About";
+ import Works from "./pages/Works";
  import Contact from "./pages/Contact";
  import VueRouter from "vue-router";
  import Vue from "vue";
@@ -18,24 +18,24 @@
  Vue.use(VueRouter);
  
  const router = new VueRouter({
-     routes:[
-        {
-            mode: 'history',
-            path:'/',
-            name: 'home',
-            component: Home
-         },
+      mode: 'history',
+      routes:[
          {
-            path:'/about',
-            name: 'about',
-            component: About
-         },
-         {
-            path:'/contact',
-            name: 'contact',
-            component: Contact
-         }
-     ]
+               path:'/',
+               name: 'home',
+               component: Home
+            },
+            {
+               path:'/works',
+               name: 'works',
+               component: Works
+            },
+            {
+               path:'/contact',
+               name: 'contact',
+               component: Contact
+            }
+      ]
  });
  
  /**

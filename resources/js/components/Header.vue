@@ -1,25 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                Boolean
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item"  
-                    v-for="(item) in menuItems"
-                    :key="item.id"
-                    >
-                    <router-link class="nav-link" :to="{ name: item.routeName}">{{ item.label }}</router-link>
-                </li>
-                </ul>
-            </div>
+    <nav>
+        <div class="my-nav-item" v-for="(item, index) in menuItems" :key="index">
+            <router-link class="my-nav-link" :to="{ name: item.routeName}">{{ item.label }}</router-link>
         </div>
     </nav>
 </template>
@@ -35,8 +17,8 @@
                         routeName: 'home',
                     },
                     {
-                        label: 'Chi siamo',
-                        routeName: 'about',
+                        label: 'I miei lavori',
+                        routeName: 'works',
                     },
                     {
                         label: 'Contatti',
@@ -48,6 +30,23 @@
     }
     </script>
 
-    <style lang="scss">
-
+    <style lang="scss" scoped>
+        nav {
+            display: flex;
+            height: 80px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            column-gap: 20px;
+            .my-nav-item {
+                .my-nav-link{
+                    color: black;
+                    font-size: 1.4em;
+                    text-decoration: none;
+                    &:hover{
+                        color: green;
+                    }
+                }
+            }
+        }
     </style>
