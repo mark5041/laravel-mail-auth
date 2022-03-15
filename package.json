@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "bootstrap": "^5.1.3",
+        "vue-animejs": "^2.1.1",
         "vue-router": "^3.5.3"
     }
 }

@@ -8,14 +8,20 @@
 
  window.Vue = require('vue');
  
+ import Vue from "vue";
  import App from "./views/App";
  import Home from "./pages/Home";
  import Works from "./pages/Works";
  import Contact from "./pages/Contact";
- import VueRouter from "vue-router";
- import Vue from "vue";
+
+
+import VueRouter from "vue-router"
+
+Vue.use(VueRouter)
+
+import VueAnime from 'vue-animejs'
  
- Vue.use(VueRouter);
+Vue.use(VueAnime)
  
  const router = new VueRouter({
       mode: 'history',
