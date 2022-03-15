@@ -37,7 +37,6 @@ class ContactController extends Controller
 
             Mail::to('admin@me.com')->send(new sendNewMail($new_lead));
 
-            Mail::to($new_lead->email)->send(new sendMailGuest($new_lead));
 
             return response()->json([
                 'success' => true

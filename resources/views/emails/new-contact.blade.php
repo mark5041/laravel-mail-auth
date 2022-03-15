@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Hai ricevuto un messaggio da {{$lead->name}}</h1>
-    <h2>Oggetto del messaggio: <span>{{$lead->message}}</span></h2>
+    <h2>Oggetto del messaggio: {{$lead->mailObject}}</h2>
+    <span>Oggetto del messaggio: <span>{{$lead->message}}</span></h2>
 </body>
 </html>
